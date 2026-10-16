@@ -1,86 +1,38 @@
 #include<iostream>
+#include<iomanip>
 #include<string>
-#include<math.h>
 using namespace std;
 int main(){
-    string resp;
-    long double n1=0, n2=0, n3=0;
-    string cont = "S" ;
+   float a, b;
+   string c;
+   cout<<"Type the first value: ";
+   cin>>a;
+   cout<<"type the second value: ";
+   cin>>b;
+   cout<<"Wich operation do you want to do? Adition(A), Subtraction(S), Division(D) or Multiplication(M)"<<endl;
+   cin>>c;
 
-  while(cont=="S"){
-
-    cout<<"Escolha a acao que deseja realizar: ";
-    cout<<" + para adicao";
-    cout<<" - para subtracao";
-    cout<<" * para multiplicacao";
-    cout<<" / para divisao";
-    cout<<" ** para potenciacao";
-    cout<<" // para raiz quadrada";
-
-    cin>>resp;
-
-    if(resp == "+"){
-        cout<<"Digite o primeiro valor: ";
-    cin>>n1;
-    cout<<"Digite o segundo valor:";
-    cin>>n2;
-        n3 = n1 + n2;
-        cout<<"A soma entre "<<n1<<" + "<<n2<<" = "<<n3<<endl;
-        n3=0;
+   if(c == "A" || c == "a"){
+    a = a+b;
+    cout<<a<<endl;
+   }
+   else if(c == "S" || c == "s"){
+    a = a-b;
+    cout<<a<<endl;
+   }
+   else if(c == "D" || c == "d"){
+    if (b != 0){
+        a = a/b;
+    cout<<a<<endl;
+    }else{
+        cout<<"You can not divide by 0!"<<endl;
     }
-
-    else if(resp == "-"){
-        cout<<"Digite o primeiro valor: ";
-    cin>>n1;
-    cout<<"Digite o segundo valor:";
-    cin>>n2;
-        n3 = n1 - n2;
-        cout<<"A subtracao entre "<<n1<<" - "<<n2<<" = "<<n3<<endl;
-        n3=0;
-    }
-
-    else if(resp == "*"){
-        cout<<"Digite o primeiro valor: ";
-    cin>>n1;
-    cout<<"Digite o segundo valor:";
-    cin>>n2;
-        n3 = n1 * n2;
-        cout<<"A multiplicacao entre "<<n1<<" * "<<n2<<" = "<<n3<<endl;
-        n3=0;
-    }
-
-    else if(resp == "/"){
-        cout<<"Digite o primeiro valor: ";
-          cin>>n1;
-        cout<<"Digite o segundo valor:";
-          cin>>n2;
-        n3 = n1 / n2;
-        cout<<"A divisao de "<<n1<<" / "<<n2<<" = "<<n3<<endl;
-        n3=0;
-    }
-
-    else if(resp == "//"){
-        cout<<"Digite o valor: ";
-          cin>>n1;
-    
-        n3 = sqrt(n1);
-        cout<<"A raiz de "<<n1<<" = "<<n3<<endl;
-        n3=0;
-    }
-
-     else if(resp == "**"){
-        cout<<"Digite o valor a ser potenciado: ";
-         cin>>n1;
-        cout<<"Digite o valor que potenciara:";
-         cin>>n2;
-        n3 = pow(n1,n2);
-        cout<<"A potenciacao de "<<n1<<" ** "<<n2<<" = "<<n3<<endl;
-        n3=0;
-    }
-   
-    cout<<"Deseja continuar? S ou N:";
-    cin>>cont;
-  }
-
+   }
+   else if(c == "M" || c == "sm"){
+    a = a*b;
+    cout<<a<<endl;
+   }else{
+    cout<<"Error, this option do not exist"<<endl;
+   }
     return 0;
 }
